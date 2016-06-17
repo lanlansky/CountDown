@@ -7,8 +7,8 @@ var margin_left = 30;
 
 
 //const endTime = new Date("2016/6/18,19:47:52");
-var endTime = new Date();
-endTime.setTime(endTime.getTime()+3600*1000);//当前时间的一个小时后
+//var endTime = new Date();
+//endTime.setTime(endTime.getTime()+3600*1000);//当前时间的一个小时后
 var curShowTimeSeconds = 0;
 var balls = [];
 const colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"];
@@ -40,11 +40,10 @@ window.onload = function(){
 
 function getCurrentShowTimeSeconds(){
 	var curTime = new Date();
-	var ret = endTime.getTime()- curTime.getTime();//得到倒计时的毫秒数
-	ret = Math.round(ret/1000);//得到倒计时的秒数
-
+	//var ret = endTime.getTime()- curTime.getTime();//得到倒计时的毫秒数
+	//ret = Math.round(ret/1000);//得到倒计时的秒数
+	var ret = curTime.getHours()*3600+curTime.getMinutes()*60+curTime.getSeconds();
 	console.log(ret);
-
 	return ret >= 0 ? ret : 0;
 }
 
